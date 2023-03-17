@@ -1,6 +1,7 @@
 import React from 'react';
 import harvardArt from '../../data/harvardArt'
 import { NavLink } from 'react-router-dom';
+import GalleryIndexName from './GalleryIndexName';
 
 const GalleryNavigation = (props) => {
 
@@ -8,18 +9,16 @@ const GalleryNavigation = (props) => {
     console.log(galleries)
 
     const galleriesList = galleries.map((gallery) => {
-        return 
+        return <GalleryIndexName key={gallery.id} gallery={gallery} />
     })
-
 
     return (
         <nav>
-        <NavLink to="/">Home</NavLink>
-               
-        <h1>Galleries</h1>
+            <NavLink to="/">Home</NavLink>
+            <h1>Galleries</h1>
+            {galleriesList}
         </nav>
     )
-
 
 }
 
